@@ -1,0 +1,25 @@
+//https://www.hackerrank.com/challenges/c-tutorial-pointer/problem
+
+#include<iostream>
+#include <cstdio>
+#include<cstdlib>
+
+using namespace std;
+void update(int *a,int *b) {
+     int c=*a-(*b);
+    *a=*b+*a;
+   
+    *b=abs(c);   
+}
+
+int main() {
+    int a, b;
+   
+    
+    cin>>a>>b;
+     int *pa = &a, *pb = &b;
+    update(pa, pb);
+    cout<<a<<"\n"<<b;
+
+    return 0;
+}
