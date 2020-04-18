@@ -1,0 +1,30 @@
+//https://www.hackerrank.com/challenges/variable-sized-arrays/problem
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,m;
+    cin>>n>>m;
+    int *p[n];
+    for(int i=0;i<n;i++)
+    {
+        int n1;
+        cin>>n1;
+        p[i]=new int[n1];
+        for(int j=0;j<n1;j++)
+            cin>>p[i][j];
+    }   
+    for(int i=0;i<m;i++)
+    {
+        int m1,m2;
+        cin>>m1>>m2;
+        cout<<p[m1][m2]<<endl;
+    }
+    return 0;
+}
