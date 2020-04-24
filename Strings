@@ -1,0 +1,20 @@
+//https://www.hackerrank.com/challenges/c-tutorial-strings/problem
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string str1,str2;
+    getline(cin, str1);
+    getline(cin, str2);
+    cout<<str1.size()<<" "<<str2.size()<<endl;
+    string c=str1+str2;
+    cout<<c<<endl;
+    char ch=str1[0];
+    str1[0]=str2[0];
+    str2[0]=ch;
+    cout<<str1<<" "<<str2<<endl;
+    return 0;
+}
