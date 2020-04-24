@@ -1,0 +1,55 @@
+//https://www.hackerrank.com/challenges/box-it/problem
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+class Box{  
+int l,b,h;// are integers representing the dimensions of the box
+
+public:// The class should have the following functions : 
+
+// Constructors: 
+ Box()
+{
+l=b=h=0;
+}
+ Box(int l,int b,int h)
+ {
+     this->l=l;
+     this->b=b;
+     this->h=h;
+ }
+ Box(Box *bb)
+ {
+     b=bb->b;
+     l=bb->l;
+     h=bb->h;
+ }
+
+
+int getLength(){return l;} // Return box's length
+int getBreadth (){return b;} // Return box's breadth
+int getHeight (){return h;}  //Return box's height
+long long CalculateVolume()
+{
+    return (long long )l*b*h;
+} // Return the volume of the box
+
+//Overload operator < as specified
+bool operator<(Box& bb)
+{
+    if(l<bb.l || b<bb.b && l==bb.l || h<bb.h && l==bb.l && b==bb.b)
+        return true;
+        
+    return false;
+}
+
+//Overload operator << as specified
+friend ostream& operator<<(ostream& output,const Box& B)
+{
+    output<<B.l<<" "<<B.b<<" "<<B.h;
+    return output;
+}
+};
+
